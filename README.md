@@ -2,6 +2,11 @@
 This repo demonstrates an issue somewhere in the interaction
 between TLS & the main PKCS11 library in Rust.
 
+# Dependencies
+```shell
+brew install softhsm
+```
+
 # Run
 ```shell
 cargo run
