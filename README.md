@@ -4,7 +4,7 @@ between TLS & the main PKCS11 library in Rust.
 
 # Dependencies
 ```shell
-brew install softhsm
+nix-env -iA nixpkgs.opensc
 ```
 
 # Run
@@ -14,19 +14,13 @@ cargo run
 
 # Sample Output
 ```shell
-➜  boring-repro cargo run
-   Compiling boring-repro v0.1.0 (/Users/.../code/boring-repro)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.61s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32s
      Running `target/debug/boring-repro`
-Assertion failed: (ret == 0), function digest_final, file boringssl_crypto_digests.m, line 41.
-[1]    34079 abort      cargo run
-
+[1]    25058 segmentation fault  cargo run
 ```
 
 # Versions
-`rustc 1.74.0 (79e9716c9 2023-11-13)`
-
-`softhsm2-util 2.6.1`
+`rustc 1.75.0 (82e1608df 2023-12-21)`
 
 `mac os 14.1.1 (23B81)`
 
